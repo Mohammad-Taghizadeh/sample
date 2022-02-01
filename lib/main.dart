@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sample/config/route/custom_scroll_view_screen.dart';
-import 'package:sample/config/route/home_screen.dart';
+import 'package:get/get.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:sample/constant/colors.dart';
+import 'package:sample/screens/custom_scroll_view_screen.dart';
+import 'package:sample/screens/home_screen.dart';
 import 'package:sample/constant/string_routes.dart';
 
 void main() => runApp(SampleApp());
@@ -11,12 +14,16 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      defaultTransition: Transition.zoom,
       debugShowCheckedModeBanner: false,
-      routes: {
-        "/": (context)=> HomeScreen(),
-        customScrollViewScreen : (context)=> CustomScrollViewScreen(),
-      },
+      getPages: [
+        GetPage(name: "/", page: ()=> HomeScreen()),
+        GetPage(name: customScrollViewRoot, page: ()=> CustomScrollViewScreen()),
+      ],
+      theme: ThemeData(
+        primaryColor: CColors.primaryColor
+      ),
     );
   }
 }
