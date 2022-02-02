@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sample/constant/colors.dart';
 import 'package:sample/widget/home/main/activity_main.dart';
 
@@ -11,14 +12,16 @@ class MainHome extends StatelessWidget {
       flex: 3,
       child: Container(
         padding: EdgeInsets.only(top: 120,left: 10),
-        color: CColors.secondaryColor,
+        color: Theme.of(context).scaffoldBackgroundColor,
         child: Column(
           children: [
            ActivityMain(),
             SizedBox(height: 20,),
             Row(
               children: [
-                Text("Categories",style: TextStyle(fontSize: 26,fontWeight: FontWeight.bold,color: CColors.textColor1),)
+                Text("Categories",
+                  style: TextStyle(fontSize: 26,
+                      fontWeight: FontWeight.bold),)
               ],
             ),
             Expanded(child: ListView.builder(
@@ -37,7 +40,7 @@ class MainHome extends StatelessWidget {
                             Container(
                               child: Row(
                                 children: [
-                                  Icon(Icons.fastfood,color: CColors.primaryColor,),
+                                  Icon(Icons.fastfood,color: Colors.orange,),
                                   SizedBox(width: 10,),
                                   Text("Food",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),)
                                 ],

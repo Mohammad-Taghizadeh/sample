@@ -13,4 +13,11 @@ class CColors{
   static const Color iconBox2 = Color.fromARGB(255,40,182,201);
   static const Color iconBox3 = Color.fromARGB(255,130,132,170);
   static const Color textBox1 = Color.fromARGB(255,99,112,138);
+  static const Color secondaryBackgroundColorDark = Color.fromARGB(255,11,14,17);
+  static const Color primaryBackgroundColorDark = Color.fromARGB(255,24,26,32);
+  static const Color secondaryBackgroundColor = Color.fromARGB(255,250,250,250);
+  static const Color primaryBackgroundColor = Color.fromARGB(255,254,254,254);
+  static const Color textColorLight = Color.fromARGB(255,24,26,32);
+  static const Color textColorDark = Color.fromARGB(255,250,250,250);
+
 }

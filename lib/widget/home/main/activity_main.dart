@@ -10,7 +10,10 @@ class ActivityMain extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text("Activity",style: TextStyle(fontSize: 26,fontWeight: FontWeight.bold,color: CColors.textColor1),)
+            Text("Activity",
+              style: TextStyle(fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                  ),)
           ],
         ),
         SizedBox(height: 10,),
@@ -28,7 +31,8 @@ class ActivityMain extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Icon(Icons.style,color: CColors.iconBox1,size: 35,),
-                  Text("My Card",style: TextStyle(fontWeight: FontWeight.bold,color: CColors.textBox1,fontSize: 16),)
+                  Text("My Card",
+                    style: TextStyle(fontWeight: FontWeight.bold,color: CColors.textBox1,fontSize: 16),)
                 ],
               ),
             ),

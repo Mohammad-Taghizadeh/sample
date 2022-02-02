@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:sample/constant/colors.dart';
-import 'package:sample/constant/strings.dart';
 import 'package:sample/widget/home/btmNavBar/custom_btm_nav_bar.dart';
 import 'package:sample/widget/home/header_home.dart';
 import 'package:sample/widget/home/main/main_home.dart';
@@ -21,32 +19,41 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Stack(
             children: [
               Column(
-                children: [
-                  HeaderHome(),
-                  MainHome()
-                ],
+                children: [HeaderHome(), MainHome()],
               ),
               Positioned(
-                top: 200,
+                top: 220,
                 left: 10,
                 right: 10,
-                child: Container(
-                  width: 400,
-                  height: 160,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                  color: Colors.white,
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/vector1.png'),
-                      fit: BoxFit.cover
+                child: CarouselSlider(
+                    options: CarouselOptions(
+                      autoPlay: true,
+                      height: 180,
+                      viewportFraction: 1,
+                      enlargeCenterPage: true,
                     ),
-                    boxShadow: [BoxShadow(color: Colors.grey,blurRadius: 1,offset: Offset(0, 2))]
-                  ),
-                ),
+                    items: [
+                     _boxImage("assets/images/vector4.png"),
+                      _boxImage("assets/images/vector3.png"),
+                      _boxImage("assets/images/vector2.png"),
+                      _boxImage("assets/images/vector1.png"),
+                      _boxImage("assets/images/vector6.png"),
+                    ]),
               )
             ],
           ),
         ),
         bottomNavigationBar: CustomBtmNavBar());
+  }
+
+  Widget _boxImage(String asset){
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(8)),
+          image: DecorationImage(
+            image: AssetImage(asset),
+            fit: BoxFit.cover,
+          )),
+    );
   }
 }

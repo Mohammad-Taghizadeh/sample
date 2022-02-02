@@ -15,14 +15,16 @@ class _CustomBtmNavBarState extends State<CustomBtmNavBar> {
     return Container(
       height: 53,
       decoration: BoxDecoration(
-          color: Colors.white, boxShadow: [BoxShadow(color: Colors.grey)]),
+          // boxShadow: [BoxShadow(color: Colors.grey)]
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _itemBottomNav(Icons.home,0),
+          _itemBottomNav(Icons.chair,0),
           _itemBottomNav(Icons.favorite,1),
-          _itemBottomNav(Icons.search,2),
+          _itemBottomNav(Icons.home,2),
           _itemBottomNav(Icons.person,3),
+          _itemBottomNav(Icons.search,4),
         ],
       ),
     );
@@ -51,7 +53,7 @@ class _CustomBtmNavBarState extends State<CustomBtmNavBar> {
               ],
             ),
               borderRadius: BorderRadius.only(topRight: Radius.circular(6),bottomLeft: Radius.circular(6)),
-          ): BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(8),),
+          ): BoxDecoration(borderRadius: BorderRadius.circular(8),),
           child: Transform.rotate(
             angle: _selectIndex == index ?  -.8 : 0,
             child: AnimatedOpacity(
