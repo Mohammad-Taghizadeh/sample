@@ -9,6 +9,7 @@ class HeaderHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.theme;
     Get.put(ThemeController());
     return Flexible(
       flex: 2,
@@ -17,11 +18,11 @@ class HeaderHome extends StatelessWidget {
         decoration: _boxDecoration(),
         child: Column(
           children: [
-            _rowTop(context),
+            _rowTop(),
             SizedBox(
               height: 10,
             ),
-            _rowMain(context)
+            _rowMain()
           ],
         ),
       ),
@@ -34,18 +35,18 @@ class HeaderHome extends StatelessWidget {
             colors: [CColors.primaryColor, CColors.primaryColorDark]));
   }
 
-  Widget _rowTop(BuildContext context) {
+  Widget _rowTop() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Icon(
           Icons.sort,
-          color: Theme.of(context).textTheme.headline1!.color,
+          color: Get.textTheme.headline1!.color,
           size: 30,
         ),
         Text(
           Strings.availableBalance,
-          style: Theme.of(context).textTheme.headline2
+          style: Get.textTheme.headline6
         ),
         GetBuilder<ThemeController>(
           builder: (theme) => IconButton(
@@ -81,7 +82,7 @@ class HeaderHome extends StatelessWidget {
     );
   }
 
-  Widget _rowMain(BuildContext context) {
+  Widget _rowMain() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
@@ -89,7 +90,7 @@ class HeaderHome extends StatelessWidget {
         Flexible(
           child: Text(
             Strings.userNameAndAmount,
-            style: Theme.of(context).textTheme.headline1
+            style: Get.textTheme.headline6
           ),
         ),
         SizedBox(
@@ -111,7 +112,7 @@ class HeaderHome extends StatelessWidget {
     return BoxDecoration(
       color: Colors.transparent,
       shape: BoxShape.circle,
-      border: Border.all(color: Colors.white, width: 2),
+      border: Border.all(color: Get.textTheme.headline6!.color!, width: 2),
     );
   }
 

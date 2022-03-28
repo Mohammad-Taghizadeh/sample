@@ -19,5 +19,7 @@ class CColors{
   static const Color primaryBackgroundColor = Color.fromARGB(255,254,254,254);
   static const Color textColorLight = Color.fromARGB(255,24,26,32);
   static const Color textColorDark = Color.fromARGB(255,250,250,250);
+  static const Color cardColorDark = Colors.white12;
+  static const Color cardColorLight = Colors.white;
 
 }

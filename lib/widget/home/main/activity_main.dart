@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sample/constant/colors.dart';
 
 class ActivityMain extends StatelessWidget {
@@ -6,14 +7,13 @@ class ActivityMain extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.theme;
     return Column(
       children: [
         Row(
           children: [
             Text("Activity",
-              style: TextStyle(fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                  ),)
+              style: Get.textTheme.bodyText1)
           ],
         ),
         SizedBox(height: 10,),

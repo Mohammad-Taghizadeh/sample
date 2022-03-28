@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:sample/constant/colors.dart';
-import 'package:sample/constant/themes.dart';
+import 'package:sample/constant/themes/custom_themes.dart';
 import 'package:sample/screens/custom_scroll_view_screen.dart';
 import 'package:sample/screens/home_screen.dart';
 import 'package:sample/constant/string_routes.dart';
+import 'package:sample/test.dart';
 
 void main() => runApp(SampleApp());
 
@@ -19,7 +20,7 @@ class SampleApp extends StatelessWidget {
       defaultTransition: Transition.zoom,
       debugShowCheckedModeBanner: false,
       getPages: [
-        GetPage(name: "/", page: ()=> HomeScreen()),
+        GetPage(name: "/", page: ()=> Test()),
         GetPage(name: customScrollViewRoot, page: ()=> CustomScrollViewScreen()),
       ],
       theme: CThemes.light,

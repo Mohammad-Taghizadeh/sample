@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sample/widget/home/btmNavBar/custom_btm_nav_bar.dart';
 import 'package:sample/widget/home/header_home.dart';
 import 'package:sample/widget/home/main/main_home.dart';
@@ -22,13 +23,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [HeaderHome(), MainHome()],
               ),
               Positioned(
-                top: 220,
+                top: Get.height / 3.5,
                 left: 10,
                 right: 10,
                 child: CarouselSlider(
                     options: CarouselOptions(
                       autoPlay: true,
-                      height: 180,
+                      height: Get.height / 4,
                       viewportFraction: 1,
                       enlargeCenterPage: true,
                     ),
